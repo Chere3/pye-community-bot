@@ -1,42 +1,66 @@
-# PyE Community - README
+# PyE Community Bot
 
-[![Discord](https://img.shields.io/discord/768278151435386900?color=7289da&label=Join%20Us%20on%20Discord&logo=discord&logoColor=white)](https://discord.gg/programacion)
-[![GitHub](https://img.shields.io/github/license/pye-community/pye-community-bot)](https://github.com/pye-community/pye-community-bot)
+Community Discord bot for [discord.gg/programacion](https://discord.com/invite/programacion), focused on practical utilities and AI-assisted interactions.
 
-Welcome to the PyE Community! Our Discord bot is designed to enhance your experience on [discord.gg/programacion](https://discord.com/invite/programacion) by providing valuable features and assistance to our members.
+## Project quality goals
+- Clear onboarding for contributors
+- Predictable local setup and scripts
+- Portfolio-ready docs and roadmap
 
-## Getting Started
+See also:
+- [ROADMAP.md](./ROADMAP.md)
+- [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-Follow these simple steps to run the PyE Community bot on your server:
+## Tech stack
+- TypeScript
+- Discord.js v14
+- pnpm
+- ESLint + TypeScript checks
 
-1. **Install Dependencies:** We recommend using [pnpm](https://pnpm.js.org/) as the package manager for this project. Install dependencies with your preferred package manager:
-
+## Quick start
+1. Install dependencies
    ```bash
    pnpm install
    ```
-
-2. **Create a Configuration File:** In the root directory of the project, create a `.env` file and provide the following details:
-
-   ```env
-   DISCORD_TOKEN=
-   CLIENT_ID=
-   GUILD_ID=
-   COHERE_AI_API_KEY=    # (optional)
-   HF_SECRET=            # (optional)
-   ```
-
-3. **Start the Bot:** Run the following command to start the bot:
-
+2. Create env file
    ```bash
-   pnpm run start
+   cp .env.example .env
+   ```
+3. Fill required values in `.env`
+4. Run in development
+   ```bash
+   pnpm dev
    ```
 
-## Contributing
+## Production run
+```bash
+pnpm start
+```
 
-We value contributions from our community members. If you have any ideas or improvements, please open an issue to discuss them before submitting a pull request.
+## Scripts
+- `pnpm dev` — run bot in development mode
+- `pnpm lint` — lint source files
+- `pnpm typecheck` — TypeScript validation
+- `pnpm build` — compile to `build/`
+- `pnpm start` — typecheck + lint + build + run
+
+## Environment variables
+Required:
+- `DISCORD_TOKEN`
+- `CLIENT_ID`
+- `GUILD_ID`
+
+Optional:
+- `COHERE_AI_API_KEY`
+- `HF_SECRET`
+
+## Validation checklist
+Before opening a PR:
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
 
 ## License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
-
----
+MIT
