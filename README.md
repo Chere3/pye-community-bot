@@ -1,42 +1,63 @@
-# PyE Community - README
+# pye-community-bot
 
-[![Discord](https://img.shields.io/discord/768278151435386900?color=7289da&label=Join%20Us%20on%20Discord&logo=discord&logoColor=white)](https://discord.gg/programacion)
-[![GitHub](https://img.shields.io/github/license/pye-community/pye-community-bot)](https://github.com/pye-community/pye-community-bot)
+Discord moderation and utility bot for the **PyE Community** server.
 
-Welcome to the PyE Community! Our Discord bot is designed to enhance your experience on [discord.gg/programacion](https://discord.com/invite/programacion) by providing valuable features and assistance to our members.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-## Getting Started
+## Features
+- Community utility commands
+- Translation helpers
+- Optional AI integrations (Cohere / HuggingFace)
+- TypeScript-first codebase with lint + type checks
 
-Follow these simple steps to run the PyE Community bot on your server:
+## Tech stack
+- Node.js + TypeScript
+- discord.js v14
+- ESLint + commitlint + husky
 
-1. **Install Dependencies:** We recommend using [pnpm](https://pnpm.js.org/) as the package manager for this project. Install dependencies with your preferred package manager:
+## Getting started
 
-   ```bash
-   pnpm install
-   ```
+### 1) Install dependencies
+```bash
+pnpm install
+```
 
-2. **Create a Configuration File:** In the root directory of the project, create a `.env` file and provide the following details:
+### 2) Configure environment
+```bash
+cp .env.example .env
+```
 
-   ```env
-   DISCORD_TOKEN=
-   CLIENT_ID=
-   GUILD_ID=
-   COHERE_AI_API_KEY=    # (optional)
-   HF_SECRET=            # (optional)
-   ```
+Required variables:
+- `DISCORD_TOKEN`
+- `CLIENT_ID`
+- `GUILD_ID`
 
-3. **Start the Bot:** Run the following command to start the bot:
+Optional variables:
+- `COHERE_AI_API_KEY`
+- `HF_SECRET`
 
-   ```bash
-   pnpm run start
-   ```
+### 3) Run locally
+```bash
+pnpm run dev
+```
+
+### 4) Production run
+```bash
+pnpm run start
+```
+
+## Quality checks
+```bash
+pnpm run typecheck
+pnpm run lint
+pnpm run build
+```
+
+## Roadmap
+Portfolio roadmap is maintained in [`ROADMAP.md`](./ROADMAP.md).
 
 ## Contributing
-
-We value contributions from our community members. If you have any ideas or improvements, please open an issue to discuss them before submitting a pull request.
+Contributions are welcome. Open an issue to discuss substantial changes before submitting a PR.
 
 ## License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
-
----
+MIT
