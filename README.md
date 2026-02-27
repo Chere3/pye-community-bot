@@ -1,42 +1,75 @@
-# PyE Community - README
+# PyE Community Bot
 
 [![Discord](https://img.shields.io/discord/768278151435386900?color=7289da&label=Join%20Us%20on%20Discord&logo=discord&logoColor=white)](https://discord.gg/programacion)
-[![GitHub](https://img.shields.io/github/license/pye-community/pye-community-bot)](https://github.com/pye-community/pye-community-bot)
+[![License](https://img.shields.io/github/license/Chere3/pye-community-bot)](./LICENSE)
 
-Welcome to the PyE Community! Our Discord bot is designed to enhance your experience on [discord.gg/programacion](https://discord.com/invite/programacion) by providing valuable features and assistance to our members.
+Discord bot for the **PyE Community** server, focused on automation, moderation support, and community interaction helpers.
 
-## Getting Started
+## Features
+- Slash-command based interaction flow.
+- Centralized startup configuration validation.
+- Modular handler/function structure under `src/modules/bot`.
+- Optional AI-powered features (when API keys are present).
 
-Follow these simple steps to run the PyE Community bot on your server:
+## Architecture at a glance
+- `src/index.ts`: startup and Discord client lifecycle.
+- `src/config.ts`: environment loading and required variable checks.
+- `src/modules/bot/handlers.ts`: event wiring + command registration.
+- `src/modules/bot/functions/*`: command/business logic.
 
-1. **Install Dependencies:** We recommend using [pnpm](https://pnpm.js.org/) as the package manager for this project. Install dependencies with your preferred package manager:
+Detailed module notes: [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
 
-   ```bash
-   pnpm install
-   ```
+## Prerequisites
+- Node.js 20+
+- pnpm 8+
+- Discord application + bot token
 
-2. **Create a Configuration File:** In the root directory of the project, create a `.env` file and provide the following details:
+## Installation
+```bash
+pnpm install
+cp .env.example .env
+```
 
-   ```env
-   DISCORD_TOKEN=
-   CLIENT_ID=
-   GUILD_ID=
-   COHERE_AI_API_KEY=    # (optional)
-   HF_SECRET=            # (optional)
-   ```
+## Environment variables
+Required:
+- `CLIENT_ID`
+- `DISCORD_TOKEN`
+- `GUILD_ID`
 
-3. **Start the Bot:** Run the following command to start the bot:
+Optional:
+- `COHERE_AI_API_KEY`
 
-   ```bash
-   pnpm run start
-   ```
+See `.env.example` for placeholders.
 
-## Contributing
+## Development workflow
+```bash
+pnpm dev
+```
 
-We value contributions from our community members. If you have any ideas or improvements, please open an issue to discuss them before submitting a pull request.
+## Scripts
+- `pnpm start`: typecheck + lint + build + run.
+- `pnpm dev`: local dev loop with auto-restart.
+- `pnpm lint`: lint TypeScript source.
+- `pnpm typecheck`: run TypeScript compiler checks.
+- `pnpm build`: compile TS to `build/`.
+- `pnpm clean`: remove build output.
+
+## Quality checks
+Recommended before every PR:
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
+
+## Project management
+- Contribution guide: [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- Portfolio roadmap: [`ROADMAP.md`](./ROADMAP.md)
+
+## Release and maintenance notes
+- Keep dependencies updated in small, reviewable batches.
+- Validate startup configuration on every environment change.
+- Prefer small scoped PRs with explicit validation notes.
 
 ## License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
-
----
+MIT — see [`LICENSE`](./LICENSE).
