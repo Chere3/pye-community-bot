@@ -1,42 +1,44 @@
-# PyE Community - README
+# PyE Community Bot
 
 [![Discord](https://img.shields.io/discord/768278151435386900?color=7289da&label=Join%20Us%20on%20Discord&logo=discord&logoColor=white)](https://discord.gg/programacion)
 [![GitHub](https://img.shields.io/github/license/pye-community/pye-community-bot)](https://github.com/pye-community/pye-community-bot)
 
-Welcome to the PyE Community! Our Discord bot is designed to enhance your experience on [discord.gg/programacion](https://discord.com/invite/programacion) by providing valuable features and assistance to our members.
+Discord bot for the PyE community server: <https://discord.gg/programacion>.
 
-## Getting Started
+## Quickstart
 
-Follow these simple steps to run the PyE Community bot on your server:
+```bash
+pnpm install
+cp .env.example .env
+pnpm start
+```
 
-1. **Install Dependencies:** We recommend using [pnpm](https://pnpm.js.org/) as the package manager for this project. Install dependencies with your preferred package manager:
+## Environment variables
 
-   ```bash
-   pnpm install
-   ```
+Required:
+- `DISCORD_TOKEN`
+- `CLIENT_ID`
+- `GUILD_ID`
 
-2. **Create a Configuration File:** In the root directory of the project, create a `.env` file and provide the following details:
+Optional:
+- `COHERE_AI_API_KEY`
+- `HF_SECRET`
 
-   ```env
-   DISCORD_TOKEN=
-   CLIENT_ID=
-   GUILD_ID=
-   COHERE_AI_API_KEY=    # (optional)
-   HF_SECRET=            # (optional)
-   ```
+See `.env.example` for template values.
 
-3. **Start the Bot:** Run the following command to start the bot:
+## Development commands
 
-   ```bash
-   pnpm run start
-   ```
+- `pnpm dev` — start in watch mode
+- `pnpm lint` — run ESLint
+- `pnpm typecheck` — run TypeScript checks
+- `pnpm build` — compile to `build/`
+- `pnpm start` — run full quality gate + build + bot startup
 
-## Contributing
+## Project standards
 
-We value contributions from our community members. If you have any ideas or improvements, please open an issue to discuss them before submitting a pull request.
+- Contribution workflow: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Portfolio roadmap and planned refactors: [ROADMAP.md](./ROADMAP.md)
 
 ## License
 
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
-
----
+Licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
