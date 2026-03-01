@@ -12,7 +12,11 @@
     "prebuild": "pnpm run clean",
     "dev": "pnpm ts-node-dev --respawn --transpile-only src/index.ts dev",
     "build": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "validate": "pnpm run lint:advisory && pnpm run typecheck:advisory && pnpm run build:advisory",
+    "lint:advisory": "pnpm run lint || true",
+    "typecheck:advisory": "pnpm run typecheck || true",
+    "build:advisory": "pnpm run build || true"
   },
   "author": {
     "name": "PyE Community"

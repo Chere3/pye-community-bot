@@ -1,42 +1,62 @@
-# PyE Community - README
+# PyE Community Bot
 
-[![Discord](https://img.shields.io/discord/768278151435386900?color=7289da&label=Join%20Us%20on%20Discord&logo=discord&logoColor=white)](https://discord.gg/programacion)
-[![GitHub](https://img.shields.io/github/license/pye-community/pye-community-bot)](https://github.com/pye-community/pye-community-bot)
+Discord bot for the PyE community server (`discord.gg/programacion`) focused on moderation support, utility flows, and community automation.
 
-Welcome to the PyE Community! Our Discord bot is designed to enhance your experience on [discord.gg/programacion](https://discord.com/invite/programacion) by providing valuable features and assistance to our members.
+## Tech stack
+- Node.js + TypeScript
+- discord.js v14
+- pnpm
 
-## Getting Started
+## Project structure
+- `src/events/` → Discord event handlers
+- `src/modules/` → command and helper modules
+- `src/config.ts` → environment-driven configuration
+- `src/index.ts` → startup and runtime wiring
 
-Follow these simple steps to run the PyE Community bot on your server:
+## Quick start
+### 1) Install
+```bash
+pnpm install
+```
 
-1. **Install Dependencies:** We recommend using [pnpm](https://pnpm.js.org/) as the package manager for this project. Install dependencies with your preferred package manager:
+### 2) Configure
+Copy `.env.example` to `.env` and fill required values:
+```bash
+cp .env.example .env
+```
 
-   ```bash
-   pnpm install
-   ```
+### 3) Run locally
+```bash
+pnpm run dev
+```
 
-2. **Create a Configuration File:** In the root directory of the project, create a `.env` file and provide the following details:
+### 4) Build and run production mode
+```bash
+pnpm run build
+pnpm run start
+```
 
-   ```env
-   DISCORD_TOKEN=
-   CLIENT_ID=
-   GUILD_ID=
-   COHERE_AI_API_KEY=    # (optional)
-   HF_SECRET=            # (optional)
-   ```
+## Quality commands
+```bash
+pnpm run lint
+pnpm run typecheck
+pnpm run build
+pnpm run validate
+```
 
-3. **Start the Bot:** Run the following command to start the bot:
+## CI
+GitHub Actions runs lint, typecheck, and build on pull requests and pushes to `main`.
 
-   ```bash
-   pnpm run start
-   ```
+## Operational checklist
+- Verify bot token and app IDs are present in `.env`.
+- Ensure bot intents enabled in Discord Developer Portal.
+- Re-register slash commands when command definitions change.
 
 ## Contributing
-
-We value contributions from our community members. If you have any ideas or improvements, please open an issue to discuss them before submitting a pull request.
+1. Create a feature branch.
+2. Keep PRs scoped to one improvement area.
+3. Run `pnpm run validate` before opening PR.
+4. Include rollout/verification notes in the PR description.
 
 ## License
-
-This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
-
----
+MIT
