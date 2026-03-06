@@ -18,12 +18,12 @@ pnpm dev
 ## Quality gates
 
 ```bash
-pnpm ci
+pnpm quality
 ```
 
 ## Pull request checklist
 
 - [ ] PR is scoped to one objective
-- [ ] `pnpm ci` passes locally
+- [ ] `pnpm quality` passes locally
 - [ ] Documentation updated when behavior/config changed
 - [ ] Includes manual verification steps

@@ -46,7 +46,7 @@ This project is licensed under the [MIT License](https://choosealicense.com/lice
 - `pnpm dev` - run bot in watch mode
 - `pnpm build` - compile TypeScript to `build/`
 - `pnpm start` - lint + typecheck + build + run
-- `pnpm ci` - local CI parity checks
+- `pnpm quality` - local CI parity checks
 
 ## Architecture overview
 
