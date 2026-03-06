@@ -40,3 +40,17 @@ We value contributions from our community members. If you have any ideas or impr
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to use and modify it according to your needs.
 
 ---
+
+## Scripts
+
+- `pnpm dev` - run bot in watch mode
+- `pnpm build` - compile TypeScript to `build/`
+- `pnpm start` - lint + typecheck + build + run
+- `pnpm ci` - local CI parity checks
+
+## Architecture overview
+
+- `src/events/` event-driven Discord handlers
+- `src/commands/` slash and utility commands
+- `src/modules/` shared helpers and handler loading
+- `src/config.ts` validated runtime configuration
