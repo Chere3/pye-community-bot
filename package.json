@@ -12,7 +12,8 @@
     "prebuild": "pnpm run clean",
     "dev": "pnpm ts-node-dev --respawn --transpile-only src/index.ts dev",
     "build": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "quality": "pnpm typecheck && pnpm lint && pnpm build"
   },
   "author": {
     "name": "PyE Community"

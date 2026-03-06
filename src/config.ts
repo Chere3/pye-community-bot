@@ -1,10 +1,13 @@
 import dotenv from 'dotenv';
 dotenv.config();
-const { CLIENT_ID, DISCORD_TOKEN, GUILD_ID } = process.env;
+const requiredEnv = ['CLIENT_ID', 'DISCORD_TOKEN', 'GUILD_ID'] as const;
+const missingEnv = requiredEnv.filter(name => !process.env[name]);
 
-if (!CLIENT_ID || !DISCORD_TOKEN || !GUILD_ID) {
-  throw new Error('Missing environment variables');
+if (missingEnv.length > 0) {
+  throw new Error(`Missing environment variables: ${missingEnv.join(', ')}`);
 }
+
+const { CLIENT_ID, DISCORD_TOKEN, GUILD_ID } = process.env as Record<(typeof requiredEnv)[number], string>;
 
 const config = {
   bot: {
